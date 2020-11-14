@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nandi\\source\\repos\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj": {}
+    "C:\\Users\\nandi\\Desktop\\Code\\EPSI\\B3\\net\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nandi\\source\\repos\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj": {
+    "C:\\Users\\nandi\\Desktop\\Code\\EPSI\\B3\\net\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nandi\\source\\repos\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj",
+        "projectUniqueName": "C:\\Users\\nandi\\Desktop\\Code\\EPSI\\B3\\net\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj",
         "projectName": "gestionnaire de téléchargement",
-        "projectPath": "C:\\Users\\nandi\\source\\repos\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj",
+        "projectPath": "C:\\Users\\nandi\\Desktop\\Code\\EPSI\\B3\\net\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\gestionnaire de téléchargement.csproj",
         "packagesPath": "C:\\Users\\nandi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nandi\\source\\repos\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\obj\\",
+        "outputPath": "C:\\Users\\nandi\\Desktop\\Code\\EPSI\\B3\\net\\gestionnaire de téléchargement\\gestionnaire de téléchargement\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nandi\\AppData\\Roaming\\NuGet\\NuGet.Config",

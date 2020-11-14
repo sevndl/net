@@ -20,7 +20,7 @@ namespace gestionnaire_de_téléchargement
                 //
 
                 Console.WriteLine($"    Téléchargement de {nomFichier} commencé.");
-                await wc.DownloadFileTaskAsync(url, dossierTelechargement);
+                await wc.DownloadFileTaskAsync(url, dossierTelechargement); // renvoie une Task
                 Console.WriteLine($"    Téléchargement de {nomFichier} fini.");
             }
         }
