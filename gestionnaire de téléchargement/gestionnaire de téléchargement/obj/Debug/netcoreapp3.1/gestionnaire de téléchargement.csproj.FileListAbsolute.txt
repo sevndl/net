@@ -1,0 +1,13 @@
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\bin\Debug\netcoreapp3.1\gestionnaire de téléchargement.exe
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\bin\Debug\netcoreapp3.1\gestionnaire de téléchargement.deps.json
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\bin\Debug\netcoreapp3.1\gestionnaire de téléchargement.runtimeconfig.json
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\bin\Debug\netcoreapp3.1\gestionnaire de téléchargement.runtimeconfig.dev.json
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\bin\Debug\netcoreapp3.1\gestionnaire de téléchargement.dll
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\bin\Debug\netcoreapp3.1\gestionnaire de téléchargement.pdb
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.csprojAssemblyReference.cache
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.AssemblyInfoInputs.cache
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.AssemblyInfo.cs
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.csproj.CoreCompileInputs.cache
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.dll
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.pdb
+C:\Users\nandi\source\repos\gestionnaire de téléchargement\gestionnaire de téléchargement\obj\Debug\netcoreapp3.1\gestionnaire de téléchargement.genruntimeconfig.cache
