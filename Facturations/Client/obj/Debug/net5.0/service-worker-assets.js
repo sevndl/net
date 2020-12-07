@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-rQykXhjYIlJBDN\/Xr\/OFErxJQqc1INIk47WrApKgdC4=",
+      "hash": "sha256-1Fp72YpgjviVvJJIc5gvUSncfbsAehWqkWTDDrhvp3k=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -793,11 +793,11 @@
       "url": "_framework\/Facturations.Shared.pdb"
     },
     {
-      "hash": "sha256-n4\/TkOCd43Bb+R9icY\/qaF3WgZASZGe23rpBWJuV7m0=",
+      "hash": "sha256-uDXS64p80EQBNotqoZAkQrxSMoVSC2ZplrsBpDcQFdU=",
       "url": "_framework\/Facturations.Client.dll"
     },
     {
-      "hash": "sha256-bO373iWo9A1aqkV+ALmz65p7\/SEL1N2gJaJndaFIWAE=",
+      "hash": "sha256-EcTNgEiJtQsiqycBvGAFJZwJO4wvbnna6uarSfRvdXw=",
       "url": "_framework\/Facturations.Client.pdb"
     },
     {
@@ -1645,7 +1645,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-DoPb4jN9kGUJ2442i4LHwq8NC9XkLdPNFVj5viTGYIg=",
+      "hash": "sha256-UkhODo6nS4prdODogNkc5OtTtfl0ZywRAjfCq3Qi8iE=",
       "url": "index.html"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "Facturations.Client.bundle.scp.css"
     }
   ],
-  "version": "mCFSqQGc"
+  "version": "pLd2L4VR"
 };

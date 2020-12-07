@@ -1,0 +1,33 @@
+﻿@page "/chiffresAffaires"
+@using Facturations.Shared
+@inject BusinessData data
+
+<h1>Chiffres d'affaires attendus</h1>
+
+<p>Un aperçu des chiffres d'affaires réels et attendus.</p>
+
+<p>Chiffre d'affaire attendu : @caAttendu() euros.</p>
+<p>Chiffre d'affaire réel : @caReel() euros.</p>
+
+@code {
+    int CAAttendu = 0;
+    int CAReel = 0;
+
+    private int caAttendu()
+    {
+        foreach (var facture in data.Factures)
+        {
+            CAAttendu += facture.montantDu;
+        }
+        return CAAttendu;
+    }
+
+    private int caReel()
+    {
+        foreach (var facture in data.Factures)
+        {
+            CAReel += facture.montantRegle;
+        }
+        return CAReel;
+    }
+}
