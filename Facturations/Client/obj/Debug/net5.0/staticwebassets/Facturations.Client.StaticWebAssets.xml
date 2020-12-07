@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

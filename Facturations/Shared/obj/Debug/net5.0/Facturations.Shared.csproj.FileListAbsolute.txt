@@ -1,0 +1,12 @@
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\bin\Debug\net5.0\Facturations.Shared.deps.json
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\bin\Debug\net5.0\Facturations.Shared.dll
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\bin\Debug\net5.0\ref\Facturations.Shared.dll
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\bin\Debug\net5.0\Facturations.Shared.pdb
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.csprojAssemblyReference.cache
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.AssemblyInfoInputs.cache
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.AssemblyInfo.cs
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.csproj.CoreCompileInputs.cache
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.dll
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\ref\Facturations.Shared.dll
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Shared\obj\Debug\net5.0\Facturations.Shared.pdb
