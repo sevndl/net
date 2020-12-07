@@ -90,7 +90,7 @@ using Facturations.Client.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Shared\SurveyPrompt.razor"
+#line 6 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Shared\SurveyPrompt.razor"
        
     // Demonstrates how a parent component can supply parameters
     [Parameter]

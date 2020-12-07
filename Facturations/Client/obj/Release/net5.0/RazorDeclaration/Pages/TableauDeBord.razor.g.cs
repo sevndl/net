@@ -82,27 +82,22 @@ using Facturations.Client.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
-    public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\TableauDeBord.razor"
+using Facturations.Shared;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/tableauDeBord")]
+    public partial class TableauDeBord : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 9 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\Counter.razor"
-       
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-
-#line default
-#line hidden
-#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BusinessData data { get; set; }
     }
 }
 #pragma warning restore 1591
