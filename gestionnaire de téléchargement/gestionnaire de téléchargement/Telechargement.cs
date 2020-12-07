@@ -7,9 +7,11 @@ namespace gestionnaire_de_téléchargement
 {
     class Telechargement
     {
+        WebClient wc;
+
         public async Task TelechargementFichier(string url)
         {
-            using (var wc = new WebClient())
+            using (wc = new WebClient())
             {
                 // récupérer le nom du fichier dans l'url
                 string pattern = @"[a-zA-Z0-9\.\-_]+\.[a-z0-9]+";
@@ -19,9 +21,8 @@ namespace gestionnaire_de_téléchargement
                 string dossierTelechargement = @"C:\Users\nandi\Downloads\" + nomFichier;
                 //
 
-                Console.WriteLine($"    Téléchargement de {nomFichier} commencé.");
                 await wc.DownloadFileTaskAsync(url, dossierTelechargement); // renvoie une Task
-                Console.WriteLine($"    Téléchargement de {nomFichier} fini.");
+                Console.WriteLine($"          {nomFichier} téléchargé.");
             }
         }
     }

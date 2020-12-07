@@ -52,9 +52,10 @@ namespace gestionnaire_de_téléchargement
             if (listeUrls.Count() > 0)
             {
                 var t = new Telechargement();
-                Console.WriteLine("\nTéléchargement asynchrone de fichiers :");
+                Console.WriteLine("\n  Téléchargement asynchrone des fichiers :\n");
                 var taches = listeUrls.Select(url => t.TelechargementFichier(url)).ToArray();
                 Task.WaitAll(taches);
+                Console.WriteLine("\n\n  Tous les téléchargements sont finis, vous les retrouverez dans dossier Téléchargements");
             }
         }
     }
