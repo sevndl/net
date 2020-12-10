@@ -200,7 +200,6 @@
     },
     "lazyAssembly": null,
     "pdb": {
-      "Facturations.Shared.pdb": "sha256-X5Iti8CLHiF\/LGjHcIN8h063PTkhqBwgUuj9DcBCfp0=",
       "Facturations.Client.pdb": "sha256-EcTNgEiJtQsiqycBvGAFJZwJO4wvbnna6uarSfRvdXw="
     },
     "runtime": {
