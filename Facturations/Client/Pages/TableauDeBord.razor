@@ -2,14 +2,14 @@
 
 @using Facturations.Shared
 
-@inject BusinessData data
+@inject HttpClient http
 
 <h1>Tableau de bord</h1>
 
 <h3>Liste des fatures</h3>
 <p>Voici un tableau de bord qui répertorie toutes vos factures et leur état.</p>
 
-@if (data.Factures == null)
+@if (factures == null)
 {
     <p><em>Vous n'avez pas de factures en cours...</em></p>
 }
@@ -27,7 +27,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var facture in data.Factures)
+            @foreach (var facture in factures)
             {
             <tr>
                 <td>@facture.client</td>
@@ -42,6 +42,12 @@ else
     </table>
 }
 
-@code {
+@code {        
+
+    private IEnumerable<Facture> factures = null;
+    protected async override Task OnInitializedAsync()
+    {
+        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+    }
 
 }

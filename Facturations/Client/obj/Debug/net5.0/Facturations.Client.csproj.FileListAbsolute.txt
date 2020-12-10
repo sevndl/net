@@ -638,3 +638,5 @@ C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\Raz
 C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\Razor\Pages\TableauDeBord.razor.g.cs
 C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ChiffresAffaires.razor.g.cs
 C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\Razor\Pages\ChiffresAffaires.razor.g.cs
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\RazorDeclaration\Pages\AjoutFacture.razor.g.cs
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\obj\Debug\net5.0\Razor\Pages\AjoutFacture.razor.g.cs

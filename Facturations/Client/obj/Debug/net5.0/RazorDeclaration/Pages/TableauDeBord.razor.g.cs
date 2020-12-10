@@ -97,7 +97,21 @@ using Facturations.Shared;
         {
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BusinessData data { get; set; }
+#nullable restore
+#line 45 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\TableauDeBord.razor"
+               
+
+    private IEnumerable<Facture> factures = null;
+    protected async override Task OnInitializedAsync()
+    {
+        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
     }
 }
 #pragma warning restore 1591

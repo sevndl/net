@@ -83,14 +83,14 @@ using Facturations.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+#line 2 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires - Copier.razor"
 using Facturations.Shared;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/chiffresAffaires")]
-    public partial class ChiffresAffaires : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class ChiffresAffaires___Copier : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,15 +98,14 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 15 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+#line 12 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires - Copier.razor"
        
     int CAAttendu = 0;
     int CAReel = 0;
-    private IEnumerable<Facture> factures = null;
 
     private int caAttendu()
     {
-        foreach (var facture in factures)
+        foreach (var facture in data.Factures)
         {
             CAAttendu += facture.montantDu;
         }
@@ -115,22 +114,17 @@ using Facturations.Shared;
 
     private int caReel()
     {
-        foreach (var facture in factures)
+        foreach (var facture in data.Factures)
         {
             CAReel += facture.montantRegle;
         }
         return CAReel;
     }
 
-    protected async override Task OnInitializedAsync()
-    {
-        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
-    }
-
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BusinessData data { get; set; }
     }
 }
 #pragma warning restore 1591

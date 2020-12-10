@@ -17,5 +17,10 @@ namespace Facturations.Shared
         }
 
         public IEnumerable<Facture> Factures { get; }
+
+        public void AjouterFacture(Facture facture)
+        {
+            Factures.Append(facture);
+        }
     }
 }

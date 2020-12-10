@@ -35,9 +35,24 @@ namespace Facturations.Server.Controllers
             if (facture != null)
             {
                 return facture;
-            } else
+            } 
+            else
             {
                 return NotFound();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult<Facture> Post([FromQuery] Facture nouvelleFacture)
+        {
+            if (ModelState.IsValid)
+            {
+                _data.AjouterFacture(nouvelleFacture);
+                return Created($"factures/{nouvelleFacture.reference}", nouvelleFacture);
+            } 
+            else
+            {
+                return BadRequest(ModelState.Values);
             }
         }
     }
