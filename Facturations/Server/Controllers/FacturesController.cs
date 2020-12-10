@@ -27,5 +27,18 @@ namespace Facturations.Server.Controllers
         {
             return _data.Factures;
         }
+
+        [HttpGet("{reference}")]
+        public ActionResult<Facture> Get(string reference)
+        {
+            var facture = _data.Factures.Where(f => f.reference == reference).FirstOrDefault();
+            if (facture != null)
+            {
+                return facture;
+            } else
+            {
+                return NotFound();
+            }
+        }
     }
 }
