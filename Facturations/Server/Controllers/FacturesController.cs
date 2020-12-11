@@ -12,7 +12,6 @@ namespace Facturations.Server.Controllers
     [Route("/api/[controller]")]
     public class FacturesController : ControllerBase
     {
-
         private readonly ILogger<FacturesController> _logger;
         private readonly BusinessData _data;
 
