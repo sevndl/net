@@ -22,9 +22,9 @@ namespace Facturations.Server.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Facture> Get()
+        public string Get()
         {
-            return _data.Factures;
+            return "CA attendu : " + _data.getCAAttendu() + "\nCA réel : " + _data.getCAReel();
         }
     }
 }

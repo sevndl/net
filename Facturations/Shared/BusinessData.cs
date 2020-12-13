@@ -8,6 +8,8 @@ namespace Facturations.Shared
 {
     public class BusinessData
     {
+        private int CAAttendu;
+        private int CAReel;
         public BusinessData()
         {
             Factures = new Facture[] {
@@ -17,6 +19,24 @@ namespace Facturations.Shared
         }
 
         public IEnumerable<Facture> Factures { get; }
+
+        public int getCAAttendu()
+        {
+            foreach (var facture in Factures)
+            {
+                CAAttendu += facture.montantDu;
+            }
+            return CAAttendu;
+        }
+
+        public int getCAReel()
+        {
+            foreach (var facture in Factures)
+            {
+                CAReel += facture.montantRegle;
+            }
+            return CAReel;
+        }
 
         public void AjouterFacture(Facture facture)
         {

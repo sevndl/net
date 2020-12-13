@@ -97,7 +97,6 @@ using Facturations.Shared;
         {
         }
         #pragma warning restore 1998
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BusinessData data { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -98,14 +98,15 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+#line 15 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
        
     int CAAttendu = 0;
     int CAReel = 0;
+    private IEnumerable<Facture> factures = null;
 
     private int caAttendu()
     {
-        foreach (var facture in data.Factures)
+        foreach (var facture in factures)
         {
             CAAttendu += facture.montantDu;
         }
@@ -114,17 +115,22 @@ using Facturations.Shared;
 
     private int caReel()
     {
-        foreach (var facture in data.Factures)
+        foreach (var facture in factures)
         {
             CAReel += facture.montantRegle;
         }
         return CAReel;
     }
 
+    protected async override Task OnInitializedAsync()
+    {
+        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+    }
+
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private BusinessData data { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
     }
 }
 #pragma warning restore 1591
