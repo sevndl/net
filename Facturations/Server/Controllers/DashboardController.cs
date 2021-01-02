@@ -24,7 +24,7 @@ namespace Facturations.Server.Controllers
         [HttpGet]
         public string Get()
         {
-            return "CA attendu : " + _data.getCAAttendu() + "\nCA réel : " + _data.getCAReel();
+            return "[{\"caAttendu\":\"" + _data.getCAAttendu() + "\"},{\"caReel\":\"" + _data.getCAReel() + "\"}]";
         }
     }
 }

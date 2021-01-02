@@ -42,7 +42,7 @@ namespace Facturations.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Facture> Post([FromQuery] Facture nouvelleFacture)
+        public ActionResult<Facture> Post([FromBody] Facture nouvelleFacture)
         {
             if (ModelState.IsValid)
             {

@@ -98,7 +98,7 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 45 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\TableauDeBord.razor"
+#line 43 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\TableauDeBord.razor"
                
 
     private IEnumerable<Facture> factures = null;
