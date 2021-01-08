@@ -24,7 +24,8 @@ namespace Facturations.Server.Controllers
         [HttpGet]
         public string Get()
         {
-            return "[{\"caAttendu\":\"" + _data.getCAAttendu() + "\"},{\"caReel\":\"" + _data.getCAReel() + "\"}]";
+            string responseString = "[{\"caAttendu\":" + _data.getCAAttendu() + "},{\"caReel\":" + _data.getCAReel() + "}]";
+            return responseString;
         }
     }
 }

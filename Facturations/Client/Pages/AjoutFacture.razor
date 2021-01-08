@@ -1,14 +1,13 @@
 ﻿@page "/ajoutFacture"
-@using Facturations.Shared
 
 <h1>Ajout d'une facture</h1>
 
-<form action="/tableauDeBord" method="post">
-    <input type="text" placeholder="client" name="client" />
-    <input type="text" placeholder="référence" name="reference" />
-    <input type="date" name="dateEmission" />
-    <input type="date" name="dateReglementAttendu" />
-    <input type="text" placeholder="montant dû" name="montantDu" />
-    <input type="text" placeholder="montant réglé" name="montantRegle" />
+<form action="/api/factures" method="post">
+    <input type="text" placeholder="Client..." name="client" /><br />
+    <input type="text" placeholder="Référence..." name="reference" /><br />
+    <input type="date" name="dateEmission" /><br />
+    <input type="date" name="dateReglementAttendu" /><br />
+    <input type="text" placeholder="Montant dû" name="montantDu" /><br />
+    <input type="text" placeholder="Montant réglé" name="montantRegle" /><br />
     <button type="submit">Créer facture</button>
 </form>

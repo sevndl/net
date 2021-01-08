@@ -42,12 +42,18 @@ namespace Facturations.Server.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Facture> Post([FromBody] Facture nouvelleFacture)
+        public ActionResult<Facture> AjouterFacture()
         {
+            string client = Request.Form["client"];
+            string reference = Request.Form["reference"];
+            string dateEmission = Request.Form["dateEmission"];
+            string dateReglementAttendu = Request.Form["dateReglementAttendu"];
+            string montantDu = Request.Form["montantDu"];
+            string montantRegle = Request.Form["montantRegle"];
             if (ModelState.IsValid)
             {
-                _data.AjouterFacture(nouvelleFacture);
-                return Created($"factures/{nouvelleFacture.reference}", nouvelleFacture);
+                _data.AjouterFacture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle);
+                return Redirect("/tableauDeBord");
             } 
             else
             {

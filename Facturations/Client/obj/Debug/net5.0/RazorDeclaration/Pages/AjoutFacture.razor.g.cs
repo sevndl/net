@@ -82,13 +82,6 @@ using Facturations.Client.Shared;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
-using Facturations.Shared;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ajoutFacture")]
     public partial class AjoutFacture : Microsoft.AspNetCore.Components.ComponentBase
     {

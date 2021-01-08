@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Facturations.Shared
 {
@@ -18,13 +14,18 @@ namespace Facturations.Shared
             this.montantDu = montantDu;
             this.montantRegle = montantRegle;
         }
-        [Required(ErrorMessage = "La référence de la facture est obligatoire")]
-        // ajouter des validations
+
+        [Required(ErrorMessage = "Champ obligatoire")]
         public string client { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public string reference { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public DateTime dateEmission { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public DateTime dateReglementAttendu { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public int montantDu { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public int montantRegle { get; set; }
 
     }
