@@ -10,29 +10,23 @@ namespace Facturations.Shared
     {
         private int CAAttendu;
         private int CAReel;
-        public IEnumerable<Facture> Factures;
+        public IList<Facture> Factures = new List<Facture>();
 
-        public BusinessData()
+    public BusinessData()
         {
-            Factures = new Facture[] {
-                new Facture("client1", "19486", DateTime.Now, DateTime.Now, 10000, 4500),
-                new Facture("client2", "1248095", DateTime.Now, DateTime.Now, 15000, 5000),
-                new Facture("client3", "27", DateTime.Now, DateTime.Now, 1234, 5678)
-            };
+            Factures.Add(new Facture("client1", "19486", DateTime.Now, DateTime.Now, 10000, 4500));
+            Factures.Add(new Facture("client2", "1248095", DateTime.Now, DateTime.Now, 15000, 5000));
+            Factures.Add(new Facture("client3", "27", DateTime.Now, DateTime.Now, 1234, 5678));
         }
 
-        public IEnumerable<Facture> getFactures()
+        public IList<Facture> getFactures()
         {
-            return this.Factures;
+            return Factures;
         }
 
         public void AjouterFacture(string client, string reference, string dateEmission, string dateReglementAttendu, string montantDu, string montantRegle)
         {
-            Console.WriteLine(client);
-            Facture nouvelleFacture = new Facture(client, reference, Convert.ToDateTime(dateEmission), Convert.ToDateTime(dateReglementAttendu), int.Parse(montantDu), int.Parse(montantRegle));
-            Console.WriteLine(nouvelleFacture.client);
-            Factures.Append(nouvelleFacture);
-            Console.WriteLine("Facture ajoutée");
+            Factures.Add(new Facture(client, reference, Convert.ToDateTime(dateEmission), Convert.ToDateTime(dateReglementAttendu), int.Parse(montantDu), int.Parse(montantRegle)));
         }
 
         public int getCAAttendu()

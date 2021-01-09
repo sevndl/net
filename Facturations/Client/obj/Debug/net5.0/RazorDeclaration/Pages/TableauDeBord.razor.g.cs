@@ -101,10 +101,10 @@ using Facturations.Shared;
 #line 43 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\TableauDeBord.razor"
                
 
-    private IEnumerable<Facture> factures = null;
+    private IList<Facture> factures = null;
     protected async override Task OnInitializedAsync()
     {
-        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+        factures = await http.GetFromJsonAsync<IList<Facture>>("api/factures");
     }
 
 

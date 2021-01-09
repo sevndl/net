@@ -22,7 +22,7 @@ namespace Facturations.Server.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Facture> Get()
+        public IList<Facture> Get()
         {
             return _data.Factures;
         }
@@ -50,15 +50,16 @@ namespace Facturations.Server.Controllers
             string dateReglementAttendu = Request.Form["dateReglementAttendu"];
             string montantDu = Request.Form["montantDu"];
             string montantRegle = Request.Form["montantRegle"];
-            if (ModelState.IsValid)
+
+            _data.AjouterFacture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle);
+            return Redirect("/tableauDeBord");
+           /* if (ModelState.IsValid)
             {
-                _data.AjouterFacture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle);
-                return Redirect("/tableauDeBord");
             } 
             else
             {
-                return BadRequest(ModelState.Values);
-            }
+                return Redirect("/ajoutFacture");
+            }*/
         }
     }
 }

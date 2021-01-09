@@ -42,10 +42,10 @@ else
 
 @code {        
 
-    private IEnumerable<Facture> factures = null;
+    private IList<Facture> factures = null;
     protected async override Task OnInitializedAsync()
     {
-        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+        factures = await http.GetFromJsonAsync<IList<Facture>>("api/factures");
     }
 
 }
