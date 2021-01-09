@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Facturations.Shared;
+using Newtonsoft.Json;
+using System.Text;
+using System.IO;
 
 namespace Facturations.Server.Controllers
 {
@@ -24,8 +27,20 @@ namespace Facturations.Server.Controllers
         [HttpGet]
         public string Get()
         {
-            string responseString = "[{\"caAttendu\":" + _data.getCAAttendu() + "},{\"caReel\":" + _data.getCAReel() + "}]";
-            return responseString;
+            StringBuilder sb = new StringBuilder();
+            StringWriter sw = new StringWriter(sb);
+
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                writer.Formatting = Formatting.Indented;
+                writer.WriteStartObject();
+                writer.WritePropertyName("caAttendu");
+                writer.WriteValue(_data.getCAAttendu());
+                writer.WritePropertyName("caReel");
+                writer.WriteValue(_data.getCAReel());
+                writer.WriteEnd();
+            }
+            return sb.ToString();
         }
     }
 }

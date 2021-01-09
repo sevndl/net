@@ -50,3 +50,4 @@ C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Server\obj\Debug\net5.0\Fac
 C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Server\obj\Debug\net5.0\ref\Facturations.Server.dll
 C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Server\obj\Debug\net5.0\Facturations.Server.pdb
 C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Server\obj\Debug\net5.0\Facturations.Server.genruntimeconfig.cache
+C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Server\bin\Debug\net5.0\Newtonsoft.Json.dll

@@ -53,13 +53,6 @@ namespace Facturations.Server.Controllers
 
             _data.AjouterFacture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle);
             return Redirect("/tableauDeBord");
-           /* if (ModelState.IsValid)
-            {
-            } 
-            else
-            {
-                return Redirect("/ajoutFacture");
-            }*/
         }
     }
 }

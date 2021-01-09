@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cWgIvMN4ghQN/H1NZyIlt3lrtXKcN7Spq6D3ljerkIOUrZ2RU+rpyzkzyHNBrJJlcxGhsyNUI0i9hU/hJTy6sA==",
+  "dgSpecHash": "+jd6XQuS0F/6Ei/jXAAiVvwOa2OpXIATBayuzQd0JgaLvD1cvG0BRIlzz2QTNRuk9FS5Mpt9BJddRLQGm2MhSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nandi\\Desktop\\Code\\EPSI\\B3\\net\\Facturations\\Server\\Facturations.Server.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\nandi\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\nandi\\.nuget\\packages\\microsoft.jsinterop\\5.0.0\\microsoft.jsinterop.5.0.0.nupkg.sha512",
     "C:\\Users\\nandi\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.0\\microsoft.jsinterop.webassembly.5.0.0.nupkg.sha512",
+    "C:\\Users\\nandi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\nandi\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512",
     "C:\\Users\\nandi\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512"
   ],
