@@ -18,9 +18,9 @@ namespace Facturations.Shared
       return Factures;
     }
 
-    public void AjouterFacture(string client, string reference, string dateEmission, string dateReglementAttendu, string montantDu, string montantRegle)
+    public void AjouterFacture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, int montantDu, int montantRegle)
     {
-      Factures.Add(new Facture(client, reference, Convert.ToDateTime(dateEmission), Convert.ToDateTime(dateReglementAttendu), int.Parse(montantDu), int.Parse(montantRegle)));
+      Factures.Add(new Facture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle));
     }
 
     public int getCAAttendu()

@@ -3,6 +3,7 @@
 @using Facturations.Shared
 
 @inject HttpClient http
+@inject NavigationManager nm
 
 <h1>Ajout d'une facture</h1>
 
@@ -11,44 +12,32 @@
   <div>
     <label for="NewClient">Client</label>
     <InputText id="NewClient" @bind-Value="@NewFacture.client" />
-    <span>
-      <ValidationMessage For="@(() => NewFacture.client)" />
-    </span>
+    <ValidationMessage For="@(() => NewFacture.client)" />
   </div>
   <div>
     <label for="NewReference">Référence</label>
     <InputText id="NewReference" @bind-Value="@NewFacture.reference" />
-    <span>
-      <ValidationMessage For="@(() => NewFacture.reference)" />
-    </span>
+    <ValidationMessage For="@(() => NewFacture.reference)" />
   </div>
   <div>
     <label for="NewDateEmission">Date d'émission</label>
     <InputDate id="NewDateEmission" @bind-Value="@NewFacture.dateEmission" />
-    <span>
-      <ValidationMessage For="@(() => NewFacture.dateEmission)" />
-    </span>
+    <ValidationMessage For="@(() => NewFacture.dateEmission)" />
   </div>
   <div>
     <label for="NewDateReglementAttendu">Date attendue pour le règlement</label>
     <InputDate id="NewDateReglementAttendu" @bind-Value="@NewFacture.dateReglementAttendu" />
-    <span>
-      <ValidationMessage For="@(() => NewFacture.dateReglementAttendu)" />
-    </span>
+    <ValidationMessage For="@(() => NewFacture.dateReglementAttendu)" />
   </div>
   <div>
     <label for="NewMontantDu">Montant dû</label>
     <InputNumber id="NewMontantDu" @bind-Value="@NewFacture.montantDu" />
-    <span>
-      <ValidationMessage For="@(() => NewFacture.montantDu)" />
-    </span>
+    <ValidationMessage For="@(() => NewFacture.montantDu)" />
   </div>
   <div>
     <label for="NewMontantRegle">Montant réglé</label>
     <InputNumber id="NewMontantRegle" @bind-Value="@NewFacture.montantRegle" />
-    <span>
-      <ValidationMessage For="@(() => NewFacture.montantRegle)" />
-    </span>
+    <ValidationMessage For="@(() => NewFacture.montantRegle)" />
   </div>
   <div>
     <button type="submit">Créer facture</button>
@@ -70,6 +59,7 @@
     if (context.Validate())
     {
       await http.PostAsJsonAsync("api/factures", NewFacture);
+      nm.NavigateTo("/tableauDeBord");
     }
   }
 }

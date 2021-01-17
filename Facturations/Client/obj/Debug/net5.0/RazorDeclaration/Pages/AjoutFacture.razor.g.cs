@@ -98,7 +98,7 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
+#line 47 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
        
   Facture NewFacture = new Facture();
   EditContext context;
@@ -114,12 +114,14 @@ using Facturations.Shared;
     if (context.Validate())
     {
       await http.PostAsJsonAsync("api/factures", NewFacture);
+      nm.NavigateTo("/tableauDeBord");
     }
   }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager nm { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
     }
 }
