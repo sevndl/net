@@ -106,6 +106,9 @@ using Facturations.Shared;
   protected override Task OnInitializedAsync()
   {
     context = new EditContext(NewFacture);
+    NewFacture.dateEmission = DateTime.Now;
+    NewFacture.dateReglementAttendu = NewFacture.dateEmission.AddDays(1);
+
     return base.OnInitializedAsync();
   }
 
