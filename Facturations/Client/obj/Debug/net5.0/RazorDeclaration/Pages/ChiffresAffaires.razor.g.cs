@@ -100,32 +100,32 @@ using Facturations.Shared;
 #nullable restore
 #line 15 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
        
-    int CAAttendu = 0;
-    int CAReel = 0;
-    private IEnumerable<Facture> factures = null;
+  int CAAttendu = 0;
+  int CAReel = 0;
+  private IEnumerable<Facture> factures = null;
 
-    private int caAttendu()
+  private int caAttendu()
+  {
+    foreach (var facture in factures)
     {
-        foreach (var facture in factures)
-        {
-            CAAttendu += facture.montantDu;
-        }
-        return CAAttendu;
+      CAAttendu += facture.montantDu;
     }
+    return CAAttendu;
+  }
 
-    private int caReel()
+  private int caReel()
+  {
+    foreach (var facture in factures)
     {
-        foreach (var facture in factures)
-        {
-            CAReel += facture.montantRegle;
-        }
-        return CAReel;
+      CAReel += facture.montantRegle;
     }
+    return CAReel;
+  }
 
-    protected async override Task OnInitializedAsync()
-    {
-        factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
-    }
+  protected async override Task OnInitializedAsync()
+  {
+    factures = await http.GetFromJsonAsync<IList<Facture>>("api/factures");
+  }
 
 #line default
 #line hidden

@@ -11,9 +11,6 @@ namespace Facturations.Shared
 
     public BusinessData()
     {
-      Factures.Add(new Facture("client1", "19486", DateTime.Now, DateTime.Now, 10000, 4500));
-      Factures.Add(new Facture("client2", "1248095", DateTime.Now, DateTime.Now, 15000, 5000));
-      Factures.Add(new Facture("client3", "27", DateTime.Now, DateTime.Now, 1234, 5678));
     }
 
     public IList<Facture> getFactures()

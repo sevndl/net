@@ -40,16 +40,9 @@ namespace Facturations.Server.Controllers
     }
 
     [HttpPost]
-    public ActionResult<Facture> AjouterFacture()
+    public ActionResult<Facture> AjouterFacture([FromBody] Facture NewFacture)
     {
-      string client = Request.Form["client"];
-      string reference = Request.Form["reference"];
-      string dateEmission = Request.Form["dateEmission"];
-      string dateReglementAttendu = Request.Form["dateReglementAttendu"];
-      string montantDu = Request.Form["montantDu"];
-      string montantRegle = Request.Form["montantRegle"];
-
-      _data.AjouterFacture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle);
+      _data.AjouterFacture(NewFacture.client, NewFacture.reference, NewFacture.dateEmission.ToString(), NewFacture.dateReglementAttendu.ToString(), NewFacture.montantDu.ToString(), NewFacture.montantRegle.ToString());
       return Redirect("/tableauDeBord");
     }
   }

@@ -82,6 +82,13 @@ using Facturations.Client.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
+using Facturations.Shared;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ajoutFacture")]
     public partial class AjoutFacture : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -90,6 +97,30 @@ using Facturations.Client.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 47 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
+       
+  Facture NewFacture = new Facture();
+  EditContext context;
+
+  protected override Task OnInitializedAsync()
+  {
+    context = new EditContext(NewFacture);
+    return base.OnInitializedAsync();
+  }
+
+  private async Task HandleSubmit(EditContext context)
+  {
+    if (context.Validate())
+    {
+      await http.PostAsJsonAsync("api/factures", NewFacture);
+    }
+  }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
     }
 }
 #pragma warning restore 1591

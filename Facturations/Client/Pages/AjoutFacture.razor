@@ -1,25 +1,64 @@
 ﻿@page "/ajoutFacture"
 
+@using Facturations.Shared
+
+@inject HttpClient http
+
 <h1>Ajout d'une facture</h1>
 
-<div>
-  <form action="/api/factures" method="post">
-    <div>
-      <label for="client">Client :</label>
-      <input type="text" placeholder="Client..." name="client" /><br />
-      <label for="reference">Référence :</label>
-      <input type="text" placeholder="Référence..." name="reference" /><br />
-      <label for="dateEmission">Date d'émission :</label>
-      <input type="date" name="dateEmission" /><br />
-      <label for="dateReglementAttendu">Date attendu pour le règlement :</label>
-      <input type="date" name="dateReglementAttendu" /><br />
-      <label for="montantDu">Montant dû :</label>
-      <input type="text" placeholder="Montant dû" name="montantDu" /><br />
-      <label for="montantRegle">Montant réglé :</label>
-      <input type="text" placeholder="Montant réglé" name="montantRegle" /><br />
-    </div>
-    <div>
-      <button type="submit">Créer facture</button>
-    </div>
-  </form>
-</div>
+<EditForm EditContext="@context" OnSubmit="@HandleSubmit">
+  <DataAnnotationsValidator />
+  <ValidationSummary />
+  <div>
+    <label for="NewClient">Client</label>
+    <InputText id="NewClient" @bind-Value="@NewFacture.client" />
+    <ValidationMessage For="@(() => NewFacture.client)" />
+  </div>
+  <div>
+    <label for="NewReference">Référence</label>
+    <InputText id="NewReference" @bind-Value="@NewFacture.reference" />
+    <ValidationMessage For="@(() => NewFacture.reference)" />
+  </div>
+  <div>
+    <label for="NewDateEmission">Date d'émission</label>
+    <InputDate id="NewDateEmission" @bind-Value="@NewFacture.dateEmission" />
+    <ValidationMessage For="@(() => NewFacture.dateEmission)" />
+  </div>
+  <div>
+    <label for="NewDateReglementAttendu">Date attendue pour le règlement</label>
+    <InputDate id="NewDateReglementAttendu" @bind-Value="@NewFacture.dateReglementAttendu" />
+    <ValidationMessage For="@(() => NewFacture.dateReglementAttendu)" />
+  </div>
+  <div>
+    <label for="NewMontantDu">Montant dû</label>
+    <InputNumber id="NewMontantDu" @bind-Value="@NewFacture.montantDu" />
+    <ValidationMessage For="@(() => NewFacture.montantDu)" />
+  </div>
+  <div>
+    <label for="NewMontantRegle">Montant réglé</label>
+    <InputNumber id="NewMontantRegle" @bind-Value="@NewFacture.montantRegle" />
+    <ValidationMessage For="@(() => NewFacture.montantRegle)" />
+  </div>
+  <div>
+    <button type="submit">Créer facture</button>
+  </div>
+</EditForm>
+
+@code {
+  Facture NewFacture = new Facture();
+  EditContext context;
+
+  protected override Task OnInitializedAsync()
+  {
+    context = new EditContext(NewFacture);
+    return base.OnInitializedAsync();
+  }
+
+  private async Task HandleSubmit(EditContext context)
+  {
+    if (context.Validate())
+    {
+      await http.PostAsJsonAsync("api/factures", NewFacture);
+    }
+  }
+}
