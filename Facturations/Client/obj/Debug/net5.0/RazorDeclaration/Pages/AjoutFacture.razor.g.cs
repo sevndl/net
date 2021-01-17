@@ -98,7 +98,7 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
+#line 58 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\AjoutFacture.razor"
        
   Facture NewFacture = new Facture();
   EditContext context;

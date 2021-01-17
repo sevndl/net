@@ -42,8 +42,15 @@ namespace Facturations.Server.Controllers
     [HttpPost]
     public ActionResult<Facture> AjouterFacture([FromBody] Facture NewFacture)
     {
-      _data.AjouterFacture(NewFacture.client, NewFacture.reference, NewFacture.dateEmission.ToString(), NewFacture.dateReglementAttendu.ToString(), NewFacture.montantDu.ToString(), NewFacture.montantRegle.ToString());
-      return Redirect("/tableauDeBord");
+      if (ModelState.IsValid)
+      {
+        _data.AjouterFacture(NewFacture.client, NewFacture.reference, NewFacture.dateEmission.ToString(), NewFacture.dateReglementAttendu.ToString(), NewFacture.montantDu.ToString(), NewFacture.montantRegle.ToString());
+        return Redirect("/tableauDeBord");
+      }
+      else
+      {
+        return Redirect("/ajoutFacture");
+      }
     }
   }
 }

@@ -8,36 +8,47 @@
 
 <EditForm EditContext="@context" OnSubmit="@HandleSubmit">
   <DataAnnotationsValidator />
-  <ValidationSummary />
   <div>
     <label for="NewClient">Client</label>
     <InputText id="NewClient" @bind-Value="@NewFacture.client" />
-    <ValidationMessage For="@(() => NewFacture.client)" />
+    <span>
+      <ValidationMessage For="@(() => NewFacture.client)" />
+    </span>
   </div>
   <div>
     <label for="NewReference">Référence</label>
     <InputText id="NewReference" @bind-Value="@NewFacture.reference" />
-    <ValidationMessage For="@(() => NewFacture.reference)" />
+    <span>
+      <ValidationMessage For="@(() => NewFacture.reference)" />
+    </span>
   </div>
   <div>
     <label for="NewDateEmission">Date d'émission</label>
     <InputDate id="NewDateEmission" @bind-Value="@NewFacture.dateEmission" />
-    <ValidationMessage For="@(() => NewFacture.dateEmission)" />
+    <span>
+      <ValidationMessage For="@(() => NewFacture.dateEmission)" />
+    </span>
   </div>
   <div>
     <label for="NewDateReglementAttendu">Date attendue pour le règlement</label>
     <InputDate id="NewDateReglementAttendu" @bind-Value="@NewFacture.dateReglementAttendu" />
-    <ValidationMessage For="@(() => NewFacture.dateReglementAttendu)" />
+    <span>
+      <ValidationMessage For="@(() => NewFacture.dateReglementAttendu)" />
+    </span>
   </div>
   <div>
     <label for="NewMontantDu">Montant dû</label>
     <InputNumber id="NewMontantDu" @bind-Value="@NewFacture.montantDu" />
-    <ValidationMessage For="@(() => NewFacture.montantDu)" />
+    <span>
+      <ValidationMessage For="@(() => NewFacture.montantDu)" />
+    </span>
   </div>
   <div>
     <label for="NewMontantRegle">Montant réglé</label>
     <InputNumber id="NewMontantRegle" @bind-Value="@NewFacture.montantRegle" />
-    <ValidationMessage For="@(() => NewFacture.montantRegle)" />
+    <span>
+      <ValidationMessage For="@(() => NewFacture.montantRegle)" />
+    </span>
   </div>
   <div>
     <button type="submit">Créer facture</button>
