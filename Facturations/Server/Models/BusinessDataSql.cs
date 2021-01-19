@@ -12,6 +12,8 @@ namespace Facturations.Server.Models
   public class BusinessDataSql : IDisposable
   {
     private SqlConnection cnct;
+    private double CAAttendu;
+    private double CAReel;
 
     public BusinessDataSql(string connectionString)
     {
@@ -35,6 +37,24 @@ namespace Facturations.Server.Models
       p.Add("@montantDu", montantDu, DbType.Double, ParameterDirection.Input);
       p.Add("@montantRegle", montantRegle, DbType.Double, ParameterDirection.Input);
       cnct.Execute(@"INSERT INTO Facturations (Reference, Client, DateEmission, DateReglementAttendu, MontantDu, MontantRegle) VALUES (@reference, @client, @dateEmission, @dateReglementAttendu, @montantDu, @montantRegle)", p);
+    }
+
+    public double getCAAttendu()
+    {
+      foreach (Facture facture in Factures)
+      {
+        CAAttendu += facture.montantDu;
+      }
+      return CAAttendu;
+    }
+
+    public double getCAReel()
+    {
+      foreach (Facture facture in Factures)
+      {
+        CAReel += facture.montantRegle;
+      }
+      return CAReel;
     }
   }
 }

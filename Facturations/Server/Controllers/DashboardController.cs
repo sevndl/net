@@ -1,4 +1,5 @@
-﻿using Facturations.Shared;
+﻿using Facturations.Server.Models;
+using Facturations.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -12,9 +13,9 @@ namespace Facturations.Server.Controllers
   public class DashboardController : ControllerBase
   {
     private readonly ILogger<DashboardController> _logger;
-    private readonly BusinessData _data;
+    private readonly BusinessDataSql _data;
 
-    public DashboardController(ILogger<DashboardController> logger, BusinessData data)
+    public DashboardController(ILogger<DashboardController> logger, BusinessDataSql data)
     {
       _logger = logger;
       _data = data;
