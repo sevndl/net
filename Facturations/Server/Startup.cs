@@ -1,3 +1,4 @@
+using Facturations.Server.Models;
 using Facturations.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +21,12 @@ namespace Facturations.Server
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddSingleton<BusinessData>(sp => new BusinessData());
+      services.AddScoped(services =>
+        new BusinessDataSql(
+          Configuration.GetConnectionString("facturation")
+        )
+      );
+      // services.AddSingleton<BusinessData>(sp => new BusinessData());
       services.AddControllersWithViews();
       services.AddRazorPages();
     }

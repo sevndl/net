@@ -5,8 +5,8 @@ namespace Facturations.Shared
 {
   public class BusinessData
   {
-    private int CAAttendu;
-    private int CAReel;
+    private double CAAttendu;
+    private double CAReel;
     public IList<Facture> Factures = new List<Facture>();
 
     public BusinessData()
@@ -18,12 +18,12 @@ namespace Facturations.Shared
       return Factures;
     }
 
-    public void AjouterFacture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, int montantDu, int montantRegle)
+    public void AjouterFacture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {
       Factures.Add(new Facture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle));
     }
 
-    public int getCAAttendu()
+    public double getCAAttendu()
     {
       foreach (Facture facture in Factures)
       {
@@ -32,7 +32,7 @@ namespace Facturations.Shared
       return CAAttendu;
     }
 
-    public int getCAReel()
+    public double getCAReel()
     {
       foreach (Facture facture in Factures)
       {

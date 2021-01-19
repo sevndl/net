@@ -13,11 +13,11 @@
 }
 
 @code {
-  int CAAttendu = 0;
-  int CAReel = 0;
+  double CAAttendu = 0;
+  double CAReel = 0;
   private IEnumerable<Facture> factures = null;
 
-  private int caAttendu()
+  private double caAttendu()
   {
     foreach (var facture in factures)
     {
@@ -26,7 +26,7 @@
     return CAAttendu;
   }
 
-  private int caReel()
+  private double caReel()
   {
     foreach (var facture in factures)
     {

@@ -1,4 +1,5 @@
-﻿using Facturations.Shared;
+﻿using Facturations.Server.Models;
+using Facturations.Shared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
@@ -11,16 +12,16 @@ namespace Facturations.Server.Controllers
   public class FacturesController : ControllerBase
   {
     private readonly ILogger<FacturesController> _logger;
-    private readonly BusinessData _data;
+    private readonly BusinessDataSql _data;
 
-    public FacturesController(ILogger<FacturesController> logger, BusinessData data)
+    public FacturesController(ILogger<FacturesController> logger, BusinessDataSql data)
     {
       _logger = logger;
       _data = data;
     }
 
     [HttpGet]
-    public IList<Facture> Get()
+    public IEnumerable<Facture> Get()
     {
       return _data.Factures;
     }
@@ -35,7 +36,7 @@ namespace Facturations.Server.Controllers
       }
       else
       {
-        return NotFound();
+        return NotFound("Aucune facture avec cette référence.");
       }
     }
 

@@ -19,14 +19,16 @@ namespace Facturations.Shared
     public DateTime dateReglementAttendu { get; set; }
 
     [Required(ErrorMessage = "Champ obligatoire")]
+    [Range(0, double.MaxValue)]
     [GreaterOrEquals("montantRegle", ErrorMessage = "Le montant dû doit être supérieur ou égal au montant réglé.")]
-    public int montantDu { get; set; }
+    public double montantDu { get; set; }
 
     [Required(ErrorMessage = "Champ obligatoire")]
+    [Range(0, double.MaxValue)]
     [LessOrEquals("montantDu", ErrorMessage = "Le montant réglé doit être inférieur ou égal au montant dû.")]
-    public int montantRegle { get; set; }
+    public double montantRegle { get; set; }
 
-    public Facture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, int montantDu, int montantRegle)
+    public Facture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {
       this.client = client;
       this.reference = reference;

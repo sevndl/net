@@ -100,11 +100,11 @@ using Facturations.Shared;
 #nullable restore
 #line 15 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
        
-  int CAAttendu = 0;
-  int CAReel = 0;
+  double CAAttendu = 0;
+  double CAReel = 0;
   private IEnumerable<Facture> factures = null;
 
-  private int caAttendu()
+  private double caAttendu()
   {
     foreach (var facture in factures)
     {
@@ -113,7 +113,7 @@ using Facturations.Shared;
     return CAAttendu;
   }
 
-  private int caReel()
+  private double caReel()
   {
     foreach (var facture in factures)
     {
