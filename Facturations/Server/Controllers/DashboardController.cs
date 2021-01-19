@@ -31,9 +31,9 @@ namespace Facturations.Server.Controllers
       {
         writer.WriteStartObject();
         writer.WritePropertyName("caAttendu");
-        writer.WriteValue(_data.getCAAttendu());
+        writer.WriteValue(_data.CAAttendu);
         writer.WritePropertyName("caReel");
-        writer.WriteValue(_data.getCAReel());
+        writer.WriteValue(_data.CAReel);
         writer.WriteEndObject();
       }
       return sb.ToString();

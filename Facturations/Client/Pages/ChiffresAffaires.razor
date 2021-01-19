@@ -1,34 +1,24 @@
 ﻿@page "/chiffresAffaires"
 @using Facturations.Shared
-@inject HttpClient http 
+@inject HttpClient http
 
 <h1>Chiffres d'affaires</h1>
 
 <p>Un aperçu des chiffres d'affaires réels et attendus.</p>
 
-@*@if (factures != null)
-{
-  <p>Chiffre d'affaire attendu : @data.getCAAttendu() euros.</p>
-  <p>Chiffre d'affaire réel : @data.getCAReel() euros.</p>
-}*@
+<p>Chiffre d'affaire attendu : @CAAttendu euros.</p>
+<p>Chiffre d'affaire réel : @CAReel euros.</p>
 
 @code {
 
-  @*private IEnumerable<Facture> factures = null;
+  private IEnumerable<Facture> factures = null;
+  private double CAAttendu = 0;
+  private double CAReel = 0;
 
-  public double getCAAttendu()
-  {
-    return data.getCAAttendu();
-  }
-
-  public double getCAReel()
-  {
-    return factures.;
-  }
 
   protected async override Task OnInitializedAsync()
   {
     factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
-  }*@
+  }
 
 }

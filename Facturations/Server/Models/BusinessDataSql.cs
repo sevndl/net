@@ -9,11 +9,9 @@ using Dapper;
 
 namespace Facturations.Server.Models
 {
-  public class BusinessDataSql: IBusinessData, IDisposable
+  public class BusinessDataSql : IBusinessData, IDisposable
   {
     private SqlConnection cnct;
-    private double CAAttendu;
-    private double CAReel;
 
     public BusinessDataSql(string connectionString)
     {
@@ -25,7 +23,9 @@ namespace Facturations.Server.Models
       cnct.Dispose();
     }
 
-    public IEnumerable<Facture> Factures => cnct.Query<Facture>("SELECT * FROM Facturations ORDER BY DateReglementAttendu DESC");
+    public IEnumerable<Facture> Factures => cnct.Query<Facture>("SELECT * FROM Facturations");
+    public double CAAttendu => cnct.QuerySingle<double>("SELECT SUM(montantDu) FROM Facturations");
+    public double CAReel => cnct.QuerySingle<double>("SELECT SUM(montantRegle) FROM Facturations");
 
     public void AjouterFacture(string reference, string client, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {
@@ -36,25 +36,9 @@ namespace Facturations.Server.Models
       p.Add("@dateReglementAttendu", dateReglementAttendu, DbType.DateTime, ParameterDirection.Input);
       p.Add("@montantDu", montantDu, DbType.Double, ParameterDirection.Input);
       p.Add("@montantRegle", montantRegle, DbType.Double, ParameterDirection.Input);
-      cnct.Execute(@"INSERT INTO Facturations (Reference, Client, DateEmission, DateReglementAttendu, MontantDu, MontantRegle) VALUES (@reference, @client, @dateEmission, @dateReglementAttendu, @montantDu, @montantRegle)", p);
-    }
-
-    public double getCAAttendu()
-    {
-      foreach (Facture facture in Factures)
-      {
-        CAAttendu += facture.montantDu;
-      }
-      return CAAttendu;
-    }
-
-    public double getCAReel()
-    {
-      foreach (Facture facture in Factures)
-      {
-        CAReel += facture.montantRegle;
-      }
-      return CAReel;
+      p.Add("@CAAttendu", CAAttendu + montantDu, DbType.Double, ParameterDirection.Input);
+      p.Add("@CAReel", CAReel + montantRegle, DbType.Double, ParameterDirection.Input);
+      cnct.Execute(@"INSERT INTO Facturations (Reference, Client, DateEmission, DateReglementAttendu, MontantDu, MontantRegle, CAAttendu, CAReel) VALUES (@reference, @client, @dateEmission, @dateReglementAttendu, @montantDu, @montantRegle, @CAAttendu, @CAReel)", p);
     }
   }
 }

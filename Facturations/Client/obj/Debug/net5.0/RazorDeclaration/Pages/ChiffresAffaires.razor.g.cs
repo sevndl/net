@@ -97,6 +97,24 @@ using Facturations.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 12 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+       
+
+  private IEnumerable<Facture> factures = null;
+  private double CAAttendu = 0;
+  private double CAReel = 0;
+
+
+  protected async override Task OnInitializedAsync()
+  {
+    factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+  }
+
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
     }
 }
