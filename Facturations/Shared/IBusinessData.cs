@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Facturations.Shared
 {
-  interface IBusinessData
+  public interface IBusinessData
   {
-
+    IEnumerable<Facture> Factures { get; }
+    double getCAAttendu();
+    double getCAReel();
+    void AjouterFacture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle);
   }
 }

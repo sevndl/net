@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Facturations.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Dapper;
-using Facturations.Shared;
 
 namespace Facturations.Server.Models
 {
-  public class BusinessDataSql : IDisposable
+  public class BusinessDataSql: IBusinessData, IDisposable
   {
     private SqlConnection cnct;
     private double CAAttendu;

@@ -13,9 +13,9 @@ namespace Facturations.Server.Controllers
   public class DashboardController : ControllerBase
   {
     private readonly ILogger<DashboardController> _logger;
-    private readonly BusinessDataSql _data;
+    private readonly IBusinessData _data;
 
-    public DashboardController(ILogger<DashboardController> logger, BusinessDataSql data)
+    public DashboardController(ILogger<DashboardController> logger, IBusinessData data)
     {
       _logger = logger;
       _data = data;
@@ -34,7 +34,7 @@ namespace Facturations.Server.Controllers
         writer.WriteValue(_data.getCAAttendu());
         writer.WritePropertyName("caReel");
         writer.WriteValue(_data.getCAReel());
-        writer.WriteEnd();
+        writer.WriteEndObject();
       }
       return sb.ToString();
     }

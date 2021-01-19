@@ -12,9 +12,9 @@ namespace Facturations.Server.Controllers
   public class FacturesController : ControllerBase
   {
     private readonly ILogger<FacturesController> _logger;
-    private readonly BusinessDataSql _data;
+    private readonly IBusinessData _data;
 
-    public FacturesController(ILogger<FacturesController> logger, BusinessDataSql data)
+    public FacturesController(ILogger<FacturesController> logger, IBusinessData data)
     {
       _logger = logger;
       _data = data;

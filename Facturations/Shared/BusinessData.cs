@@ -3,29 +3,26 @@ using System.Collections.Generic;
 
 namespace Facturations.Shared
 {
-  public class BusinessData
+  public class BusinessData/* : IBusinessData*/
   {
     private double CAAttendu;
     private double CAReel;
-    public IList<Facture> Factures = new List<Facture>();
+    private List<Facture> factures = null;
 
     public BusinessData()
     {
     }
 
-    public IList<Facture> getFactures()
-    {
-      return Factures;
-    }
+    public IEnumerable<Facture> Factures => factures;
 
     public void AjouterFacture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {
-      Factures.Add(new Facture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle));
+      factures.Add(new Facture(client, reference, dateEmission, dateReglementAttendu, montantDu, montantRegle));
     }
 
     public double getCAAttendu()
     {
-      foreach (Facture facture in Factures)
+      foreach (Facture facture in factures)
       {
         CAAttendu += facture.montantDu;
       }
@@ -34,7 +31,7 @@ namespace Facturations.Shared
 
     public double getCAReel()
     {
-      foreach (Facture facture in Factures)
+      foreach (Facture facture in factures)
       {
         CAReel += facture.montantRegle;
       }

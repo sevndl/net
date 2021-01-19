@@ -97,39 +97,6 @@ using Facturations.Shared;
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 15 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
-       
-  double CAAttendu = 0;
-  double CAReel = 0;
-  private IEnumerable<Facture> factures = null;
-
-  private double caAttendu()
-  {
-    foreach (var facture in factures)
-    {
-      CAAttendu += facture.montantDu;
-    }
-    return CAAttendu;
-  }
-
-  private double caReel()
-  {
-    foreach (var facture in factures)
-    {
-      CAReel += facture.montantRegle;
-    }
-    return CAReel;
-  }
-
-  protected async override Task OnInitializedAsync()
-  {
-    factures = await http.GetFromJsonAsync<IList<Facture>>("api/factures");
-  }
-
-#line default
-#line hidden
-#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient http { get; set; }
     }
 }
