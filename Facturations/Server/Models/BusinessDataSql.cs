@@ -24,8 +24,8 @@ namespace Facturations.Server.Models
     }
 
     public IEnumerable<Facture> Factures => cnct.Query<Facture>("SELECT * FROM Facturations");
-    public double CAAttendu => cnct.QuerySingle<double>("SELECT SUM(montantDu) FROM Facturations");
-    public double CAReel => cnct.QuerySingle<double>("SELECT SUM(montantRegle) FROM Facturations");
+    public double CAAttendu => cnct.QuerySingleOrDefault<double>("SELECT SUM(montantDu) FROM Facturations");
+    public double CAReel => cnct.QuerySingleOrDefault<double>("SELECT SUM(montantRegle) FROM Facturations");
 
     public void AjouterFacture(string reference, string client, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {

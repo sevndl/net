@@ -24,10 +24,11 @@ namespace Facturations.Server.Controllers
     [HttpGet]
     public string Get()
     {
-      StringBuilder sb = new StringBuilder();
-      StringWriter sw = new StringWriter(sb);
 
-      using (JsonWriter writer = new JsonTextWriter(sw))
+      StringBuilder sb = new StringBuilder();
+      TextWriter tw = new StringWriter(sb);
+
+      using (JsonWriter writer = new JsonTextWriter(tw))
       {
         writer.WriteStartObject();
         writer.WritePropertyName("caAttendu");
@@ -35,8 +36,10 @@ namespace Facturations.Server.Controllers
         writer.WritePropertyName("caReel");
         writer.WriteValue(_data.CAReel);
         writer.WriteEndObject();
+        /*JsonSerializer s = new JsonSerializer();
+        return s.Serialize(tw, null);*/
       }
-      return sb.ToString();
+      return tw.ToString();
     }
   }
 }

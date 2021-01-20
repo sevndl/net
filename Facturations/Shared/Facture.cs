@@ -28,6 +28,9 @@ namespace Facturations.Shared
     [LessOrEquals("montantDu", ErrorMessage = "Le montant réglé doit être inférieur ou égal au montant dû.")]
     public double montantRegle { get; set; }
 
+    public double CAAttendu { get; set; }
+    public double CAReel { get; set; }
+
     public Facture(string client, string reference, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {
       this.client = client;

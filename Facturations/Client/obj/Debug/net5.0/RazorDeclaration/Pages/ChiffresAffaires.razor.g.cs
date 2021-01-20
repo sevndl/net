@@ -83,7 +83,7 @@ using Facturations.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+#line 4 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
 using Facturations.Shared;
 
 #line default
@@ -98,19 +98,14 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+#line 20 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
        
-
-  private IEnumerable<Facture> factures = null;
-  private double CAAttendu = 0;
-  private double CAReel = 0;
-
+  private IEnumerable<Facture> data;
 
   protected async override Task OnInitializedAsync()
   {
-    factures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+    data = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
   }
-
 
 #line default
 #line hidden
