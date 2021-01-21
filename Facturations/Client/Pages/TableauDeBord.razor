@@ -8,35 +8,35 @@
 
 @if (data == null)
 {
-    <p><em>Vous n'avez pas de factures en cours...</em></p>
+  <p><em>Vous n'avez pas de factures en cours...</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-          <tr>
-            <th>Client</th>
-            <th>Numéro</th>
-            <th>Date d'émission</th>
-            <th>Date de règlement attendue</th>
-            <th>Montant dû</th>
-            <th>Montant réglé</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach (var facture in data)
-            {
-          <tr>
-            <td>@facture.client</td>
-            <td>@facture.reference</td>
-            <td>@facture.dateEmission.ToString("dd-MM-yyyy")</td>
-            <td>@facture.dateReglementAttendu.ToString("dd-MM-yyyy")</td>
-            <td>@facture.montantDu</td>
-            <td>@facture.montantRegle</td>
-          </tr>
-            }
-        </tbody>
-    </table>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Numéro</th>
+          <th>Date d'émission</th>
+          <th>Date de règlement attendue</th>
+          <th>Montant dû</th>
+          <th>Montant réglé</th>
+        </tr>
+      </thead>
+      <tbody>
+          @foreach (var facture in data)
+          {
+        <tr>
+          <td>@facture.client</td>
+          <td>@facture.reference</td>
+          <td>@facture.dateEmission.ToString("dd-MM-yyyy")</td>
+          <td>@facture.dateReglementAttendu.ToString("dd-MM-yyyy")</td>
+          <td>@facture.montantDu</td>
+          <td>@facture.montantRegle</td>
+        </tr>
+          }
+      </tbody>
+  </table>
 }
 
 @code {

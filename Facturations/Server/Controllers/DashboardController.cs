@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text;
+using System;
 
 namespace Facturations.Server.Controllers
 {
@@ -24,7 +25,7 @@ namespace Facturations.Server.Controllers
     [HttpGet]
     public string Get()
     {
-
+      // TODO => créer du json exploitable
       StringBuilder sb = new StringBuilder();
       TextWriter tw = new StringWriter(sb);
 
@@ -32,12 +33,10 @@ namespace Facturations.Server.Controllers
       {
         writer.WriteStartObject();
         writer.WritePropertyName("caAttendu");
-        writer.WriteValue(_data.CAAttendu);
+        writer.WriteValue(_data.getCAAttendu());
         writer.WritePropertyName("caReel");
-        writer.WriteValue(_data.CAReel);
+        writer.WriteValue(_data.getCAReel());
         writer.WriteEndObject();
-        /*JsonSerializer s = new JsonSerializer();
-        return s.Serialize(tw, null);*/
       }
       return tw.ToString();
     }

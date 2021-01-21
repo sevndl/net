@@ -1,24 +1,32 @@
 ﻿@page "/chiffresAffaires"
 
-@inject HttpClient http 
+@inject HttpClient http
 @using Facturations.Shared
 
 <h1>Chiffres d'affaires</h1>
 
 <p>Un aperçu des chiffres d'affaires réels et attendus.</p>
 
-@if (data != null)
-{
-  <p>Chiffre d'affaire attendu : @data.Last().CAAttendu euros.</p>
-  <p>Chiffre d'affaire réel : @data.Last().CAReel euros.</p>
-}
-else
+@if (data == null)
 {
   <p>Interrogation du serveur...</p>
 }
+else
+{
+  @if (data.Count() != 0)
+  {
+    <p>Chiffre d'affaire attendu : @data.Last().CAAttendu euros.</p>
+    <p>Chiffre d'affaire réel : @data.Last().CAReel euros.</p>
+  }
+  else
+  {
+    <p>Chiffre d'affaire attendu : 0 euro.</p>
+    <p>Chiffre d'affaire réel : 0 euro.</p>
+  }
+}
 
 @code {
-  private IEnumerable<Facture> data;
+  private IEnumerable<Facture> data = null;
 
   protected async override Task OnInitializedAsync()
   {

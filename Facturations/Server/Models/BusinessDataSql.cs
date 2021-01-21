@@ -24,8 +24,18 @@ namespace Facturations.Server.Models
     }
 
     public IEnumerable<Facture> Factures => cnct.Query<Facture>("SELECT * FROM Facturations");
-    public double CAAttendu => cnct.QuerySingleOrDefault<double>("SELECT SUM(montantDu) FROM Facturations");
-    public double CAReel => cnct.QuerySingleOrDefault<double>("SELECT SUM(montantRegle) FROM Facturations");
+
+    public double getCAAttendu()
+    {
+      if (Factures.Count() == 0) { return 0; }
+      else { return cnct.QuerySingleOrDefault<double>("SELECT SUM(montantDu) FROM Facturations"); }
+    }
+
+    public double getCAReel()
+    {
+      if (Factures.Count() == 0) { return 0; }
+      else { return cnct.QuerySingleOrDefault<double>("SELECT SUM(montantRegle) FROM Facturations"); }
+    }
 
     public void AjouterFacture(string reference, string client, DateTime dateEmission, DateTime dateReglementAttendu, double montantDu, double montantRegle)
     {
@@ -36,8 +46,8 @@ namespace Facturations.Server.Models
       p.Add("@dateReglementAttendu", dateReglementAttendu, DbType.DateTime, ParameterDirection.Input);
       p.Add("@montantDu", montantDu, DbType.Double, ParameterDirection.Input);
       p.Add("@montantRegle", montantRegle, DbType.Double, ParameterDirection.Input);
-      p.Add("@CAAttendu", CAAttendu + montantDu, DbType.Double, ParameterDirection.Input);
-      p.Add("@CAReel", CAReel + montantRegle, DbType.Double, ParameterDirection.Input);
+      p.Add("@CAAttendu", getCAAttendu() + montantDu, DbType.Double, ParameterDirection.Input);
+      p.Add("@CAReel", getCAReel() + montantRegle, DbType.Double, ParameterDirection.Input);
       cnct.Execute(@"INSERT INTO Facturations (Reference, Client, DateEmission, DateReglementAttendu, MontantDu, MontantRegle, CAAttendu, CAReel) VALUES (@reference, @client, @dateEmission, @dateReglementAttendu, @montantDu, @montantRegle, @CAAttendu, @CAReel)", p);
     }
   }

@@ -98,9 +98,9 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 20 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+#line 28 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
        
-  private IEnumerable<Facture> data;
+  private IEnumerable<Facture> data = null;
 
   protected async override Task OnInitializedAsync()
   {
