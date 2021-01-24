@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System.Text;
 using System;
+using Newtonsoft.Json.Linq;
 
 namespace Facturations.Server.Controllers
 {
@@ -13,19 +14,17 @@ namespace Facturations.Server.Controllers
   [Route("/api/[controller]")]
   public class DashboardController : ControllerBase
   {
-    private readonly ILogger<DashboardController> _logger;
     private readonly IBusinessData _data;
 
-    public DashboardController(ILogger<DashboardController> logger, IBusinessData data)
+    public DashboardController(IBusinessData data)
     {
-      _logger = logger;
       _data = data;
     }
 
-    [HttpGet]
+    // bonne forme mais pas exploitable car string
+    /*[HttpGet]
     public string Get()
     {
-      // TODO => créer du json exploitable
       StringBuilder sb = new StringBuilder();
       TextWriter tw = new StringWriter(sb);
 
@@ -38,7 +37,30 @@ namespace Facturations.Server.Controllers
         writer.WriteValue(_data.getCAReel());
         writer.WriteEndObject();
       }
+
       return tw.ToString();
+    }*/
+
+
+    // bonne forme mais pas exploitable car string
+    [HttpGet]
+    public string Get()
+    {
+      return JsonConvert.SerializeObject(new { caAttendu = _data.getCAAttendu(), caReel = _data.getCAReel() });
     }
+
+    // bonne forme mais je ne comprends pas pourquoi les valeurs ne sont pas récupérées et un tableau vide [] apparaît à la place
+    /*[HttpGet]
+    public JObject Get()
+    {
+      return JObject.Parse("{ \"caAttendu\": " + _data.getCAAttendu() + ", \"caReel\": " + _data.getCAReel() + " }");
+    }*/
+
+    // bonne forme mais je ne comprends pas pourquoi les valeurs ne sont pas récupérées et un tableau vide [] apparaît à la place
+    /*[HttpGet]
+    public object Get()
+    {
+      return JsonConvert.DeserializeObject("{ \"caAttendu\": " + _data.getCAAttendu() + ", \"caReel\": " + _data.getCAReel() + " }");
+    }*/
   }
 }

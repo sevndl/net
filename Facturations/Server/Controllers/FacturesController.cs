@@ -11,12 +11,10 @@ namespace Facturations.Server.Controllers
   [Route("/api/[controller]")]
   public class FacturesController : ControllerBase
   {
-    private readonly ILogger<FacturesController> _logger;
     private readonly IBusinessData _data;
 
-    public FacturesController(ILogger<FacturesController> logger, IBusinessData data)
+    public FacturesController(IBusinessData data)
     {
-      _logger = logger;
       _data = data;
     }
 

@@ -196,12 +196,11 @@
       "netstandard.dll": "sha256-4QNBIB4DMwj82CYd96oFrTh3fcrmyaDjtQ2dBTyWz7Q=",
       "System.Private.CoreLib.dll": "sha256-5Zk+rN+j5FbFEQJdT8YR2O0i6KWpvrERsaPZCv69DmI=",
       "Facturations.Shared.dll": "sha256-mJLB9p6nSNRQG+iOs\/0\/d8bMo\/N4a53PTYkHEkXx3Ws=",
-      "Facturations.Client.dll": "sha256-qLtQDu2lAxuxWMmxmG08gHHFd5twZWalCYBytZS+mY8="
+      "Facturations.Client.dll": "sha256-bPeqROrS4qH7c92KN3x7p6v7cINGYELbyfeuqu2gxEU="
     },
     "lazyAssembly": null,
     "pdb": {
-      "Facturations.Shared.pdb": "sha256-ROEbaB+2LxkyuskwrP5V2l\/s+JwQZg+M\/KwgEctnIC0=",
-      "Facturations.Client.pdb": "sha256-v5t6mZLDzF0oawU45yd47YDa\/A7rBei+JWfKqMrP3Mw="
+      "Facturations.Client.pdb": "sha256-aLJ2HVU3duSmw4zeRd\/TI5R7ImbC89o9+iIy348cKiQ="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-2ldEe2K8ARFKSIBsv+Hr3iNQzq9qh1H\/dwdu2r+AIyY=",
