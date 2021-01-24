@@ -21,7 +21,7 @@ namespace Facturations.Server.Controllers
       _data = data;
     }
 
-    // bonne forme mais pas exploitable car string
+    // bonne forme mais pas exploitable dans la page ChiffresAffaires.razor car string
     /*[HttpGet]
     public string Get()
     {
@@ -42,7 +42,7 @@ namespace Facturations.Server.Controllers
     }*/
 
 
-    // bonne forme mais pas exploitable car string
+    // bonne forme mais pas exploitable dans la page ChiffresAffaires.razor car string
     [HttpGet]
     public string Get()
     {
