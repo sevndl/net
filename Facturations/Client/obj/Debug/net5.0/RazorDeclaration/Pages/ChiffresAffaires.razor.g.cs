@@ -98,14 +98,15 @@ using Facturations.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
-       
-  private IEnumerable<Facture> data = null;
+#line 34 "C:\Users\nandi\Desktop\Code\EPSI\B3\net\Facturations\Client\Pages\ChiffresAffaires.razor"
+     
 
-  protected async override Task OnInitializedAsync()
-  {
-    data = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
-  }
+private Dictionary<string, double> data = null;
+
+protected async override Task OnInitializedAsync()
+{
+  data = await http.GetFromJsonAsync<Dictionary<string, double>>("api/dashboard");
+}
 
 #line default
 #line hidden

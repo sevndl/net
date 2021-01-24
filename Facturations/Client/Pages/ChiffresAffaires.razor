@@ -15,8 +15,8 @@ else
 {
   @if (data.Count() != 0)
   {
-    <p>Chiffre d'affaire attendu : @data.Last().CAAttendu euros.</p>
-    <p>Chiffre d'affaire réel : @data.Last().CAReel euros.</p>
+    <p>Chiffre d'affaire attendu : @data["caAttendu"] euros.</p>
+    <p>Chiffre d'affaire réel : @data["caReel"] euros.</p>
   }
   else
   {
@@ -26,10 +26,10 @@ else
 }
 
 @code {
-  private IEnumerable<Facture> data = null;
+  private Dictionary<string, double> data = null;
 
   protected async override Task OnInitializedAsync()
   {
-    data = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/factures");
+    data = await http.GetFromJsonAsync<Dictionary<string, double>>("api/dashboard");
   }
 }

@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-gOx3nyV+9XexOEgGraWtZ+hnrf6GvbPFCgPHhduvivo=",
+      "hash": "sha256-vqA88mHkeVsMrfwTEg4lb8z7OV7J6xI9bg1ZvyFQiIw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -793,11 +793,11 @@
       "url": "_framework\/Facturations.Shared.pdb"
     },
     {
-      "hash": "sha256-bPeqROrS4qH7c92KN3x7p6v7cINGYELbyfeuqu2gxEU=",
+      "hash": "sha256-3g6ZfhOE2ViqwilGVT+TMR\/cc75MJN\/DwXDcAzYTY6U=",
       "url": "_framework\/Facturations.Client.dll"
     },
     {
-      "hash": "sha256-aLJ2HVU3duSmw4zeRd\/TI5R7ImbC89o9+iIy348cKiQ=",
+      "hash": "sha256-ybjRaGkOIJ5rTYyKelxut5WNIk4N1VsA6ypvBoerKzE=",
       "url": "_framework\/Facturations.Client.pdb"
     },
     {
@@ -1661,5 +1661,5 @@
       "url": "Facturations.Client.bundle.scp.css"
     }
   ],
-  "version": "SGUq3i3F"
+  "version": "KM4iBJTz"
 };

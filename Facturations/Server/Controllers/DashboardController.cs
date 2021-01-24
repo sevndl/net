@@ -22,48 +22,6 @@ namespace Facturations.Server.Controllers
       _data = data;
     }
 
-    // bonne forme mais pas exploitable dans la page ChiffresAffaires.razor car string
-    /*[HttpGet]
-    public string Get()
-    {
-      StringBuilder sb = new StringBuilder();
-      TextWriter tw = new StringWriter(sb);
-
-      using (JsonWriter writer = new JsonTextWriter(tw))
-      {
-        writer.WriteStartObject();
-        writer.WritePropertyName("caAttendu");
-        writer.WriteValue(_data.getCAAttendu());
-        writer.WritePropertyName("caReel");
-        writer.WriteValue(_data.getCAReel());
-        writer.WriteEndObject();
-      }
-
-      return tw.ToString();
-    }*/
-
-
-    // bonne forme mais pas exploitable dans la page ChiffresAffaires.razor car string
-    /*[HttpGet]
-    public string Get()
-    {
-      return JsonConvert.SerializeObject(new { caAttendu = _data.getCAAttendu(), caReel = _data.getCAReel() });
-    }*/
-
-    // bonne forme mais je ne comprends pas pourquoi les valeurs ne sont pas récupérées et un tableau vide [] apparaît à la place
-    /*[HttpGet]
-    public JObject Get()
-    {
-      return JObject.Parse("{ \"caAttendu\": " + _data.getCAAttendu() + ", \"caReel\": " + _data.getCAReel() + " }");
-    }*/
-
-    // bonne forme mais je ne comprends pas pourquoi les valeurs ne sont pas récupérées et un tableau vide [] apparaît à la place
-    /*[HttpGet]
-    public object Get()
-    {
-      return JsonConvert.DeserializeObject("{ \"caAttendu\": " + _data.getCAAttendu() + ", \"caReel\": " + _data.getCAReel() + " }");
-    }*/
-
     [HttpGet]
     public Dictionary<string, double> Get()
     {
