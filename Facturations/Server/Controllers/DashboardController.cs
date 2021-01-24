@@ -7,6 +7,7 @@ using System.IO;
 using System.Text;
 using System;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace Facturations.Server.Controllers
 {
@@ -43,11 +44,11 @@ namespace Facturations.Server.Controllers
 
 
     // bonne forme mais pas exploitable dans la page ChiffresAffaires.razor car string
-    [HttpGet]
+    /*[HttpGet]
     public string Get()
     {
       return JsonConvert.SerializeObject(new { caAttendu = _data.getCAAttendu(), caReel = _data.getCAReel() });
-    }
+    }*/
 
     // bonne forme mais je ne comprends pas pourquoi les valeurs ne sont pas récupérées et un tableau vide [] apparaît à la place
     /*[HttpGet]
@@ -62,5 +63,11 @@ namespace Facturations.Server.Controllers
     {
       return JsonConvert.DeserializeObject("{ \"caAttendu\": " + _data.getCAAttendu() + ", \"caReel\": " + _data.getCAReel() + " }");
     }*/
+
+    [HttpGet]
+    public Dictionary<string, double> Get()
+    {
+      return new Dictionary<string, double> { { "caAttendu", _data.getCAAttendu() }, { "caReel", _data.getCAReel() } };
+    }
   }
 }
